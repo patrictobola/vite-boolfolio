@@ -11,8 +11,8 @@ export default {
     projects: []
   }),
   methods: {
-    fetchProjects() {
-      const endpoint = 'http://127.0.0.1:8000/api/projects';
+    fetchProjects(endpoint = 'http://127.0.0.1:8000/api/projects') {
+      // const endpoint = 'http://127.0.0.1:8000/api/projects';
 
       axios.get(endpoint).then(res => { this.projects = res.data })
     }
@@ -26,7 +26,7 @@ export default {
 <template>
   <AppHeader />
   <AppMain :projects="projects.data" />
-  <PaginationLinks :links="projects.links" />
+  <PaginationLinks :links="projects.links" @change-page="fetchProjects" />
 </template>
 
 <style ></style>
