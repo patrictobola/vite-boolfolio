@@ -2,9 +2,10 @@
 import axios from 'axios';
 import AppHeader from './components/AppHeader.vue'
 import AppMain from './components/AppMain.vue'
+import PaginationLinks from './PaginationLinks.vue'
 export default {
   components: {
-    AppHeader, AppMain
+    AppHeader, AppMain, PaginationLinks
   },
   data: () => ({
     projects: []
@@ -24,7 +25,8 @@ export default {
 
 <template>
   <AppHeader />
-  <AppMain :projects="projects" />
+  <AppMain :projects="projects.data" />
+  <PaginationLinks :links="projects.links" />
 </template>
 
 <style ></style>
