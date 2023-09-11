@@ -6,10 +6,14 @@ export default {
   components: {
     AppHeader, AppMain
   },
+  data: () => ({
+    projects: []
+  }),
   methods: {
     fetchProjects() {
       const endpoint = 'http://127.0.0.1:8000/api/projects';
-      axios.get(endpoint).then(res => { console.log(res.data) })
+
+      axios.get(endpoint).then(res => { this.projects = res.data })
     }
   },
   created() {
@@ -20,7 +24,7 @@ export default {
 
 <template>
   <AppHeader />
-  <AppMain />
+  <AppMain :projects="projects" />
 </template>
 
 <style ></style>
