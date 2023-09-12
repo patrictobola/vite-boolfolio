@@ -20,7 +20,7 @@ export default {
                 .then(res => {
                     const { data, links } = res.data;
                     this.projects = { data, links }
-                })
+                }).catch(err => { console.log(err) })
 
         }
     },
