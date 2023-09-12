@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios';
-import PaginationLinks from '../PaginationLinks.vue';
+import PaginationLinks from '../components/PaginationLinks.vue';
 import ProjectsCard from '../components/projects/ProjectsCard.vue';
 
 export default {
