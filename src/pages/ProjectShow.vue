@@ -1,8 +1,9 @@
 <script>
 import axios from 'axios';
-
+import DetailCard from '../components/projects/DetailCard.vue';
 export default {
     components: {
+        DetailCard
     },
     data: () => ({
         project: []
@@ -15,6 +16,7 @@ export default {
             axios.get(endpoint)
                 .then(res => {
                     this.project = res.data
+                    console.log(this.project)
                 }).catch(err => { console.log(err) })
 
         }
@@ -26,7 +28,7 @@ export default {
 </script>
 <template>
     <div class="container">
-        <h1>{{ project.title }}</h1>
+        <DetailCard :project="project" />
     </div>
 </template>
 <style></style>
