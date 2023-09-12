@@ -1,6 +1,6 @@
 <script>
 export default {
-    props: { project: Array }
+    props: { project: Object }
 }
 </script>
 <template>
