@@ -1,5 +1,7 @@
 <script></script>
 <template>
-    <h1>Asd</h1>
+    <div class="container h-100 d-flex justify-content-center align-items-center">
+        <h1>Welcome to this awesome (🤦‍♂️) vue project</h1>
+    </div>
 </template>
 <style></style>
