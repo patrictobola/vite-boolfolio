@@ -1,6 +1,6 @@
 <script>
 export default {
-    props: { project: Object }
+    props: { project: Object, types: Object }
 }
 </script>
 <template>
@@ -8,6 +8,10 @@ export default {
         <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">
                 <h1 class="card-title">{{ project.title }}</h1>
+                <!-- <div v-if="types?.length">
+                    <span v-for="typee in types" class="badge rounded-pill me-1"
+                        :style="{ backgroundColor: type.color }">{{ type.label }}</span>
+                </div> -->
                 <div v-if="project.technologies?.length">
                     <span v-for="tech in project.technologies" class="badge rounded-pill me-1"
                         :style="{ backgroundColor: tech.color }">{{ tech.label }}</span>

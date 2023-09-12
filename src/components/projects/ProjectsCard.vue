@@ -1,6 +1,6 @@
 <script>
 export default {
-    props: { project: Object }
+    props: { project: Object, types: Object }
 }
 </script>
 <template>
@@ -9,6 +9,10 @@ export default {
             <div class="card-body">
                 <div class="d-flex justify-content-between">
                     <h5 class="card-title">{{ project.title }}</h5>
+                    <div v-if="types.filter((id) => project.type_id == id) === project.type_id">
+                        <span v-for="typee in types" class="badge rounded-pill me-1"
+                            :style="{ backgroundColor: typee.color }">{{ typee.label }}</span>
+                    </div>
                     <RouterLink class="btn btn-success" :to="{ name: 'project-show', params: { id: project.id } }">Dettagli
                     </RouterLink>
                 </div>
