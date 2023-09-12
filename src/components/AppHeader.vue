@@ -14,11 +14,6 @@
                     <li class="nav-item">
                         <RouterLink class="nav-link" :to="{ name: 'projects' }">Projects</RouterLink>
                     </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li> -->
-
-
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
