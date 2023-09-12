@@ -9,7 +9,8 @@ export default {
             <div class="card-body">
                 <div class="d-flex justify-content-between">
                     <h5 class="card-title">{{ project.title }}</h5>
-                    <RouterLink class="btn btn-success" to="/">Dettagli</RouterLink>
+                    <RouterLink class="btn btn-success" :to="{ name: 'project-show', params: { id: project.id } }">Dettagli
+                    </RouterLink>
                 </div>
                 <h6 class="card-subtitle mb-2 text-body-secondary">{{ project.date }}</h6>
                 <p class="card-text">{{ project.description }}</p>
