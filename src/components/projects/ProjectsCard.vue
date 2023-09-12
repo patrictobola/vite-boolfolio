@@ -9,8 +9,9 @@ export default {
             <div class="card-body">
                 <div class="d-flex justify-content-between">
                     <h5 class="card-title">{{ project.title }}</h5>
-                    <div v-if="types.filter((id) => project.type_id == id) === project.type_id">
-                        <span v-for="typee in types" class="badge rounded-pill me-1"
+                    <div v-for="typee in types">
+
+                        <span v-if="project.type_id === typee.id" class="badge rounded-pill me-1 text-dark"
                             :style="{ backgroundColor: typee.color }">{{ typee.label }}</span>
                     </div>
                     <RouterLink class="btn btn-success" :to="{ name: 'project-show', params: { id: project.id } }">Dettagli
