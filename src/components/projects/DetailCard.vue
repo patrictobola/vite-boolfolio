@@ -22,6 +22,7 @@ export default {
                     <p class="card-text">{{ project.description }}</p>
                 </div>
             </div>
+            <button class="btn btn-primary" @click="$router.back()">Go back</button>
         </div>
     </div>
 </template>
