@@ -1,18 +1,19 @@
 <script>
 import axios from 'axios';
-
+const emptyForm = { email: '', subject: '', content: '' }
 export default {
     data: () => ({
-        form: {
-            email: '',
-            subject: '',
-            content: '',
-        }
+        form: { email: '', subject: '', content: '' }
     }),
     methods: {
         sendMail() {
             const endpoint = 'http://127.0.0.1:8000/api/contact_us';
-            axios.post(endpoint, this.form).then(() => { })
+            axios.post(endpoint, this.form)
+                .then(() => {
+                    this.form = emptyForm
+                })
+                .catch(err => { console.error(err) })
+                .then(() => { })
         }
     }
 }
