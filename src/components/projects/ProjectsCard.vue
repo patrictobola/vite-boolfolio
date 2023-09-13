@@ -1,6 +1,9 @@
 <script>
+import { RouterLink } from 'vue-router';
+
 export default {
-    props: { project: Object, types: Object }
+    props: { project: Object, types: Object },
+    components: { RouterLink }
 }
 </script>
 <template>
@@ -11,8 +14,8 @@ export default {
                     <h5 class="card-title">{{ project.title }}</h5>
                     <div v-for="typee in types">
 
-                        <span v-if="project.type_id === typee.id" class="badge rounded-pill me-1 text-dark"
-                            :style="{ backgroundColor: typee.color }">{{ typee.label }}</span>
+                        <RouterLink v-if="project.type_id === typee.id" to="/" class="badge rounded-pill me-1 text-dark"
+                            :style="{ backgroundColor: typee.color }">{{ typee.label }}</RouterLink>
                     </div>
                     <RouterLink class="btn btn-success" :to="{ name: 'project-show', params: { id: project.id } }">Dettagli
                     </RouterLink>
